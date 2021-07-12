@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="200px"
+    app:cardElevation="8dp"
+
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true">
+
+    <TextView
+        android:background="#03DAC5"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="这是悬浮的"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</androidx.cardview.widget.CardView>

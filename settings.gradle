@@ -1,0 +1,3 @@
+rootProject.name='recylerViewModel'
+include ':app'
+include ':recycler_view_model'

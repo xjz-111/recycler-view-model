@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--  用Glide加载图片，Tag会被设置为Request，如果外部再设置Tag，正在加载时退出页面就会抛异常，所以设置TagId  -->
+    <item name="glideIndexTag" type="id"/>
+
+</resources>

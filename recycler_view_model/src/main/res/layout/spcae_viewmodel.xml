@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="space"
+            type="String"/>
+    </data>
+
+    <Space
+        android:layout_width="0px"
+        android:layout_height="1px"/>
+</layout>
+
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="hover_view"
+            type="com.leslie.recylerviewmodel.test.data.Alphabet" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:id="@+id/parentText"
+            android:layout_width="match_parent"
+            android:layout_height="200px"
+            android:background="#00FFFF"
+            android:gravity="center" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10px"
+            android:background="#cccccc" />
+    </LinearLayout>
+</layout>
