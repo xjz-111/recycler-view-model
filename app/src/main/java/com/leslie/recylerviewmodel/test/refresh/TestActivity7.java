@@ -18,6 +18,8 @@ import com.leslie.recylerviewmodel.test.Utils;
 import java.util.List;
 
 /**
+ * 下拉刷新+翻页
+ *
  * 作者：xjzhao
  * 时间：2021-07-13 10:13
  */
