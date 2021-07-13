@@ -26,7 +26,7 @@ public class TestActivity6 extends BaseActivity implements AlphabetViewModel.OnS
     private HoverViewBinding binding;
 
     @Override
-    protected void addView(@NonNull RelativeLayout parent) {
+    protected void addView2(@NonNull RelativeLayout parent) {
         View hover = LayoutInflater.from(this).inflate(R.layout.hover_view, null);
         hover.setVisibility(View.VISIBLE);
         parent.addView(hover);
@@ -44,11 +44,17 @@ public class TestActivity6 extends BaseActivity implements AlphabetViewModel.OnS
         return new LinearLayoutManager(this);
     }
 
+
+    private int lastTopMargin = 0;
     @Override
     public void onScroll(int top, @NonNull Alphabet alphabet) {
-        RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams) binding.parent.getLayoutParams();
-        lp.topMargin = Math.min(210, top) < 210 ? top - 210 : 0;
-        binding.parent.setLayoutParams(lp);
-        binding.parentText.setText(alphabet.getParent());
+        int topMargin = Math.min(210, top) < 210 ? top - 210 : 0;
+        if (lastTopMargin != topMargin){
+            RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams) binding.parent.getLayoutParams();
+            lp.topMargin = topMargin;
+            binding.parent.setLayoutParams(lp);
+            binding.parentText.setText(alphabet.getParent());
+            lastTopMargin = topMargin;
+        }
     }
 }

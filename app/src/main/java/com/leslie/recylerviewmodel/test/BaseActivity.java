@@ -28,11 +28,15 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         parent = new RelativeLayout(this);
-        setContentView(parent, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-        recyclerView = new AutoLoadRecyclerView(this);
-        parent.addView(recyclerView);
 
-        addView(parent);
+        addView1(parent);
+
+        setContentView(parent, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+
+        addRecyclerView(parent);
+
+        addView2(parent);
+
         recyclerView.setItemViewCacheSize(4);
 //        recyclerView.setRecycledViewPool(new RecyclerView.RecycledViewPool());
         recyclerView.setLayoutManager(getLayoutManager());
@@ -42,7 +46,14 @@ public abstract class BaseActivity extends AppCompatActivity {
         adapter.setViewModels(vms);
     }
 
-    protected void addView(@NonNull RelativeLayout parent){}
+    protected void addView1(@NonNull RelativeLayout parent){}
+
+    protected void addRecyclerView(@NonNull RelativeLayout parent){
+        recyclerView = new AutoLoadRecyclerView(this);
+        parent.addView(recyclerView);
+    }
+
+    protected void addView2(@NonNull RelativeLayout parent){}
 
     protected CommonRecyclerViewAdapter getAdapter(){
         return new CommonRecyclerViewAdapter(this);

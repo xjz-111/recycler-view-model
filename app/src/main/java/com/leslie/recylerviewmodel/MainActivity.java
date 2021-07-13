@@ -11,6 +11,7 @@ import com.leslie.recylerviewmodel.test.grid.TestActivity4;
 import com.leslie.recylerviewmodel.test.headerfoooter.TestActivity2;
 import com.leslie.recylerviewmodel.test.hover.TestActivity5;
 import com.leslie.recylerviewmodel.test.list.TestActivity1;
+import com.leslie.recylerviewmodel.test.refresh.TestActivity7;
 import com.leslie.recylerviewmodel.test.waterfall.TestActivity3;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn4).setOnClickListener(this);
         findViewById(R.id.btn5).setOnClickListener(this);
         findViewById(R.id.btn6).setOnClickListener(this);
+        findViewById(R.id.btn7).setOnClickListener(this);
     }
 
     @Override
@@ -42,6 +44,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(new Intent(this, TestActivity5.class));
         } else if (id == R.id.btn6){
             startActivity(new Intent(this, TestActivity6.class));
+        } else if (id == R.id.btn7){
+            startActivity(new Intent(this, TestActivity7.class));
         }
     }
 }

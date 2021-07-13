@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="android.view.View"/>
+
+
+        <variable
+            name="footer"
+            type="com.leslie.recylerviewmodel.test.refresh.Footer"/>
+    </data>
+
+
+    <RelativeLayout
+        android:background="#00FFFF"
+        android:id="@+id/layout"
+        android:visibility="@{footer.state == footer.FOOTER_NORMAL ? View.GONE : View.VISIBLE}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <!--&lt;!&ndash;数据已经全部加载完&ndash;&gt;-->
+        <RelativeLayout
+            android:visibility="@{footer.state == footer.FOOTER_FINISHED ? View.VISIBLE : View.GONE}"
+            android:layout_width="match_parent"
+            android:layout_height="75dp">
+
+            <TextView
+                android:id="@+id/loading_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/loading_text"
+                android:background="@mipmap/footer_left_divider"
+                android:layout_toLeftOf="@+id/loading_text" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/loading_text"
+                android:background="@mipmap/footer_right_divider"
+                android:layout_toRightOf="@+id/loading_text" />
+        </RelativeLayout>
+
+        <!--数据加载中-->
+        <LinearLayout
+            android:visibility="@{footer.state == footer.FOOTER_LOADING ? View.VISIBLE : View.GONE}"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="75dp">
+            <include
+                android:visibility="@{footer.state == footer.FOOTER_LOADING ? View.VISIBLE : View.GONE}"
+                layout="@layout/app_progressbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+        </LinearLayout>
+
+
+
+        <!--数据加载失败-->
+        <TextView
+            android:visibility="@{footer.state == footer.FOOTER_FAILURED ? View.VISIBLE : View.GONE}"
+            android:layout_centerInParent="true"
+            android:id="@+id/loading_failured"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="加载失败"/>
+
+
+    </RelativeLayout>
+</layout>
+
