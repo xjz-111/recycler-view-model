@@ -36,7 +36,7 @@ public abstract class BaseCommonViewModel<T, K extends ViewDataBinding> implemen
     protected Context context;
     private int startPosition;
     private OnNotifyDataSetChanged onNotifyDataSetChanged;
-    private SparseArray<ViewDataBinding> states = new SparseArray<>();
+    private SparseArray<K> states = new SparseArray<>();
 
     public BaseCommonViewModel(List<T> list) {
         if (null != list){
@@ -396,11 +396,11 @@ public abstract class BaseCommonViewModel<T, K extends ViewDataBinding> implemen
 
     }
 
-    public void onViewAttachedToWindow(@NonNull ViewDataBinding binding, T t, int position) {
+    public void onViewAttachedToWindow(@NonNull K binding, T t, int position) {
         states.put(position, binding);
     }
 
-    public void onViewDetachedFromWindow(@NonNull ViewDataBinding binding, T t, int position) {
+    public void onViewDetachedFromWindow(@NonNull K binding, T t, int position) {
         states.remove(position);
     }
 
@@ -421,11 +421,11 @@ public abstract class BaseCommonViewModel<T, K extends ViewDataBinding> implemen
         }
     }
 
-    protected void onVisibleItemResume(@NonNull ViewDataBinding binding, T t, int position){
+    protected void onVisibleItemResume(@NonNull K binding, T t, int position){
 
     }
 
-    protected void onVisibleItemPause(@NonNull ViewDataBinding binding, T t, int position){
+    protected void onVisibleItemPause(@NonNull K binding, T t, int position){
 
     }
 

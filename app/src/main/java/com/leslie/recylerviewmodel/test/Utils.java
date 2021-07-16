@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import com.leslie.recylerviewmodel.MApplication;
 import com.leslie.recylerviewmodel.test.data.Alphabet;
 import com.leslie.recylerviewmodel.test.data.ImgData;
+import com.leslie.recylerviewmodel.test.data.Video;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +36,18 @@ public class Utils {
                     "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fn.sinaimg.cn%2Fsinakd10123%2F706%2Fw1075h1231%2F20200401%2F906b-irpunai4320158.jpg&refer=http%3A%2F%2Fn.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1624176889&t=99fdfbceab6a6ea2555498bade3adf64",};
     public static Integer[][] params = new Integer[][]{new Integer[]{422, 300}, new Integer[]{653, 748}, new Integer[]{1600, 2097}, new Integer[]{600, 780}, new Integer[]{1075, 1231}};
 
+    public static String[] videos = new String[]{
+            "https://v-cdn.zjol.com.cn/280443.mp4",
+            "https://v-cdn.zjol.com.cn/276982.mp4",
+            "https://v-cdn.zjol.com.cn/276984.mp4",
+            "https://v-cdn.zjol.com.cn/276985.mp4",
+            "https://v-cdn.zjol.com.cn/276986.mp4",
+            "https://v-cdn.zjol.com.cn/276987.mp4",
+            "https://v-cdn.zjol.com.cn/276988.mp4",
+            "https://v-cdn.zjol.com.cn/276989.mp4",
+            "https://v-cdn.zjol.com.cn/276990.mp4",
+            "https://v-cdn.zjol.com.cn/276991.mp4",
+    };
 
     public static void init(){
         DisplayMetrics metrics = new DisplayMetrics();
@@ -78,6 +91,14 @@ public class Utils {
             for (int j = 0; j < children; j++){
                 list.add(new Alphabet(j, String.valueOf(i), "这是" + i + "的第 - " + j + "个元素"));
             }
+        }
+        return list;
+    }
+
+    public static List<Video> getList10(){
+        List<Video> list = getList();
+        for (int i = 0; i < 10; i++){
+            list.add(new Video(videos[i % videos.length], "这是标题 - " + i));
         }
         return list;
     }

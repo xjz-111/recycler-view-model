@@ -13,6 +13,7 @@ import com.leslie.recylerviewmodel.test.hover.TestActivity5;
 import com.leslie.recylerviewmodel.test.list.TestActivity1;
 import com.leslie.recylerviewmodel.test.otherVm.TestActivity8;
 import com.leslie.recylerviewmodel.test.refresh.TestActivity7;
+import com.leslie.recylerviewmodel.test.video.TestActivity10;
 import com.leslie.recylerviewmodel.test.vmRequest.TestActivity9;
 import com.leslie.recylerviewmodel.test.waterfall.TestActivity3;
 
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn7).setOnClickListener(this);
         findViewById(R.id.btn8).setOnClickListener(this);
         findViewById(R.id.btn9).setOnClickListener(this);
+        findViewById(R.id.btn10).setOnClickListener(this);
     }
 
     @Override
@@ -54,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(new Intent(this, TestActivity8.class));
         } else if (id == R.id.btn9){
             startActivity(new Intent(this, TestActivity9.class));
+        } else if (id == R.id.btn10){
+            startActivity(new Intent(this, TestActivity10.class));
         }
     }
 }

@@ -12,5 +12,5 @@
         android:gravity="center"
         android:text="@{footer}"
         android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+        android:layout_height="150px"/>
 </layout>
