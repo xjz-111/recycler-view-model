@@ -1,5 +1,7 @@
 package com.leslie.recycler_view_model;
 
+import com.leslie.recycler_view_model.databinding.SpcaeViewmodelBinding;
+
 /**
  * 介绍：
  * 作者：xjzhao
@@ -7,7 +9,7 @@ package com.leslie.recycler_view_model;
  * 时间: 2017-03-13  16:34
  */
 
-class SpaceViewModel extends BaseCommonViewModel<String> {
+class SpaceViewModel extends BaseCommonViewModel<String, SpcaeViewmodelBinding> {
     SpaceViewModel() {
         addItem("");
     }
@@ -31,4 +33,6 @@ class SpaceViewModel extends BaseCommonViewModel<String> {
     public void onClick(int position, String s) {
 
     }
+
+
 }

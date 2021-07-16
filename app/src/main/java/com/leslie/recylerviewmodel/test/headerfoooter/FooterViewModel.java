@@ -3,12 +3,13 @@ package com.leslie.recylerviewmodel.test.headerfoooter;
 import com.leslie.recycler_view_model.BaseCommonViewModel;
 import com.leslie.recylerviewmodel.BR;
 import com.leslie.recylerviewmodel.R;
+import com.leslie.recylerviewmodel.databinding.FooterVmBinding;
 
 /**
  * 作者：xjzhao
  * 时间：2021-07-09 11:31
  */
-public class FooterViewModel extends BaseCommonViewModel<String> {
+public class FooterViewModel extends BaseCommonViewModel<String, FooterVmBinding> {
     public FooterViewModel(String s) {
         super(s);
     }

@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class BaseCommonRecyclerViewHolder<T extends ViewDataBinding, K> extends RecyclerView.ViewHolder {
     private View itemView;
     private T binding;
-    private BaseCommonViewModel<K> viewModel;
+    private BaseCommonViewModel<K, T> viewModel;
 
     BaseCommonRecyclerViewHolder(T binding) {
         super(binding.getRoot());
@@ -35,7 +35,7 @@ public class BaseCommonRecyclerViewHolder<T extends ViewDataBinding, K> extends 
         return viewModel;
     }
 
-    public BaseCommonRecyclerViewHolder setViewModel(BaseCommonViewModel<K> viewModel) {
+    public BaseCommonRecyclerViewHolder setViewModel(BaseCommonViewModel<K, T> viewModel) {
         this.viewModel = viewModel;
         return this;
     }

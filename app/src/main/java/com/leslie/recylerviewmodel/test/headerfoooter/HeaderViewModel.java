@@ -4,12 +4,12 @@ import android.graphics.Rect;
 import android.view.View;
 
 import androidx.annotation.NonNull;
-import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.leslie.recycler_view_model.BaseCommonViewModel;
 import com.leslie.recylerviewmodel.BR;
 import com.leslie.recylerviewmodel.R;
+import com.leslie.recylerviewmodel.databinding.HeaderVmBinding;
 import com.leslie.recylerviewmodel.test.data.ImgData;
 
 import java.util.List;
@@ -20,7 +20,7 @@ import java.util.List;
  * 作者：xjzhao
  * 时间：2021-07-09 00:57
  */
-public class HeaderViewModel extends BaseCommonViewModel<ImgData> {
+public class HeaderViewModel extends BaseCommonViewModel<ImgData, HeaderVmBinding> {
 
     public HeaderViewModel(List<ImgData> list) {
         super(list);
@@ -37,7 +37,7 @@ public class HeaderViewModel extends BaseCommonViewModel<ImgData> {
     }
 
     @Override
-    protected void initView(@NonNull ViewDataBinding binding, @NonNull ImgData imgData, int position, List<Object> payloads) {
+    protected void initView(@NonNull HeaderVmBinding binding, @NonNull ImgData imgData, int position, List<Object> payloads) {
         super.initView(binding, imgData, position, payloads);
     }
 

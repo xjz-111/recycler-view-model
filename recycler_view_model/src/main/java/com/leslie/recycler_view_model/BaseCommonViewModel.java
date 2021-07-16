@@ -27,7 +27,7 @@ import java.util.Map;
  * 时间: 2017-03-07  13:03
  */
 
-public abstract class BaseCommonViewModel<T> implements OnRecyclerViewItemClickListener<T>, OnRecyclerViewItemLongClickListener<T>, IComm {
+public abstract class BaseCommonViewModel<T, K extends ViewDataBinding> implements OnRecyclerViewItemClickListener<T>, OnRecyclerViewItemLongClickListener<T>, IComm {
     private CommonRecyclerViewAdapter adapter;
     private List<T> list = new ArrayList<>();
     private int normalViewType; //有数据时的ViewType，每种类型一个单独的type，具体为在列表中ViewModel的顺序index
@@ -98,7 +98,7 @@ public abstract class BaseCommonViewModel<T> implements OnRecyclerViewItemClickL
         return null;
     }
 
-    public BaseCommonViewModel<T> setList(List<T> list) {
+    public BaseCommonViewModel<T, K> setList(List<T> list) {
         this.list.clear();
         if (null != list){
             this.list.addAll(list);
@@ -107,7 +107,7 @@ public abstract class BaseCommonViewModel<T> implements OnRecyclerViewItemClickL
         return this;
     }
 
-    public BaseCommonViewModel<T> addList(List<T> list) {
+    public BaseCommonViewModel<T, K> addList(List<T> list) {
         if (null != list){
             this.list.addAll(list);
             notifyDataSetChanged();
@@ -115,7 +115,7 @@ public abstract class BaseCommonViewModel<T> implements OnRecyclerViewItemClickL
         return this;
     }
 
-    public BaseCommonViewModel<T> addListWithClean(List<T> list) {
+    public BaseCommonViewModel<T, K> addListWithClean(List<T> list) {
         this.list.clear();
         if (null != list){
             this.list.addAll(list);
@@ -124,7 +124,7 @@ public abstract class BaseCommonViewModel<T> implements OnRecyclerViewItemClickL
         return this;
     }
 
-    public BaseCommonViewModel<T> addItem(T t){
+    public BaseCommonViewModel<T, K> addItem(T t){
         if (null != t) {
             list.add(t);
             notifyDataSetChanged();
@@ -132,7 +132,7 @@ public abstract class BaseCommonViewModel<T> implements OnRecyclerViewItemClickL
         return this;
     }
 
-    public BaseCommonViewModel<T> addItemWithClean(T t){
+    public BaseCommonViewModel<T, K> addItemWithClean(T t){
         this.list.clear();
         if (null != t){
             list.add(t);
@@ -142,7 +142,7 @@ public abstract class BaseCommonViewModel<T> implements OnRecyclerViewItemClickL
     }
 
 
-    public BaseCommonViewModel<T> setItem(T t, int position){
+    public BaseCommonViewModel<T, K> setItem(T t, int position){
         if (getItemCount() == 0 && position == getItemCount()){
             list.add(t);
             if(null!=adapter){
@@ -160,13 +160,13 @@ public abstract class BaseCommonViewModel<T> implements OnRecyclerViewItemClickL
         return this;
     }
 
-    public BaseCommonViewModel<T> cleanList() {
+    public BaseCommonViewModel<T, K> cleanList() {
         this.list.clear();
         notifyDataSetChanged();
         return this;
     }
 
-    public BaseCommonViewModel<T> remove(int position){
+    public BaseCommonViewModel<T, K> remove(int position){
         if (position > -1 && getItemCount() > position) {
             list.remove(position);
             notifyDataSetChanged();
@@ -174,13 +174,13 @@ public abstract class BaseCommonViewModel<T> implements OnRecyclerViewItemClickL
         return this;
     }
 
-    public BaseCommonViewModel<T> remove(T t){
+    public BaseCommonViewModel<T, K> remove(T t){
         list.remove(t);
         notifyDataSetChanged();
         return this;
     }
 
-    public BaseCommonViewModel<T> addItem(int position, T t){
+    public BaseCommonViewModel<T, K> addItem(int position, T t){
         if (null != t) {
             list.add(position, t);
             notifyDataSetChanged();
@@ -188,7 +188,7 @@ public abstract class BaseCommonViewModel<T> implements OnRecyclerViewItemClickL
         return this;
     }
 
-    public BaseCommonViewModel<T> setOnNotifyDataSetChanged(OnNotifyDataSetChanged changed){
+    public BaseCommonViewModel<T, K> setOnNotifyDataSetChanged(OnNotifyDataSetChanged changed){
         this.onNotifyDataSetChanged = changed;
         return this;
     }
@@ -222,7 +222,7 @@ public abstract class BaseCommonViewModel<T> implements OnRecyclerViewItemClickL
 
     }
 
-    public final BaseCommonViewModel<T> setStartPosition(int position){
+    public final BaseCommonViewModel<T, K> setStartPosition(int position){
         this.startPosition = position;
         return this;
     }
@@ -232,7 +232,7 @@ public abstract class BaseCommonViewModel<T> implements OnRecyclerViewItemClickL
     }
 
 
-    BaseCommonViewModel<T> setAdapter(CommonRecyclerViewAdapter adapter) {
+    BaseCommonViewModel<T, K> setAdapter(CommonRecyclerViewAdapter adapter) {
         if (null == this.adapter) this.adapter = adapter;
         return this;
     }
@@ -251,13 +251,13 @@ public abstract class BaseCommonViewModel<T> implements OnRecyclerViewItemClickL
         return false;
     }
 
-    BaseCommonViewModel<T> setNormalViewType(int type) {
+    BaseCommonViewModel<T, K> setNormalViewType(int type) {
         this.normalViewType = type;
         spaceViewType = normalViewType * SPACE_VIEW_TYPE_SPEC;
         return this;
     }
 
-    BaseCommonViewModel<T> setContext(Context context) {
+    BaseCommonViewModel<T, K> setContext(Context context) {
         this.context = context;
         initWhitContext();
         return this;
@@ -301,7 +301,7 @@ public abstract class BaseCommonViewModel<T> implements OnRecyclerViewItemClickL
      * @param position
      * @param positionInViewModel
      */
-    final void onBindViewHolder(@NonNull ViewDataBinding binding, @NonNull BaseCommonRecyclerViewHolder holder, final int position, final int positionInViewModel, List<Object> payloads) {
+    final void onBindViewHolder(@NonNull K binding, @NonNull BaseCommonRecyclerViewHolder holder, final int position, final int positionInViewModel, List<Object> payloads) {
 
         final T item = getItem(positionInViewModel);
 
@@ -359,7 +359,7 @@ public abstract class BaseCommonViewModel<T> implements OnRecyclerViewItemClickL
         return true;
     }
 
-    protected void initView(@NonNull ViewDataBinding binding, @NonNull T t, int position, List<Object> payloads){
+    protected void initView(@NonNull K binding, @NonNull T t, int position, List<Object> payloads){
 
     }
 

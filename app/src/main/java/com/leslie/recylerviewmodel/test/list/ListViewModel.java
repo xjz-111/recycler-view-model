@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.leslie.recycler_view_model.BaseCommonViewModel;
 import com.leslie.recylerviewmodel.R;
+import com.leslie.recylerviewmodel.databinding.ListVmBinding;
 
 import java.util.List;
 
@@ -20,7 +21,7 @@ import java.util.List;
  * 作者：xjzhao
  * 时间：2021-07-08 13:59
  */
-public class ListViewModel extends BaseCommonViewModel<String> {
+public class ListViewModel extends BaseCommonViewModel<String, ListVmBinding> {
 
     public ListViewModel(List<String> list) {
         super(list);

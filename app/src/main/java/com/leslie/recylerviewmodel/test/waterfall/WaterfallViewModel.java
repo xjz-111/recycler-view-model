@@ -3,6 +3,7 @@ package com.leslie.recylerviewmodel.test.waterfall;
 import com.leslie.recycler_view_model.BaseCommonViewModel;
 import com.leslie.recylerviewmodel.BR;
 import com.leslie.recylerviewmodel.R;
+import com.leslie.recylerviewmodel.databinding.WaterfallVmBinding;
 import com.leslie.recylerviewmodel.test.data.ImgData;
 
 import java.util.List;
@@ -13,7 +14,7 @@ import java.util.List;
  * 作者：xjzhao
  * 时间：2021-07-09 11:51
  */
-public class WaterfallViewModel extends BaseCommonViewModel<ImgData> {
+public class WaterfallViewModel extends BaseCommonViewModel<ImgData, WaterfallVmBinding> {
 
     public WaterfallViewModel(List<ImgData> list) {
         super(list);
