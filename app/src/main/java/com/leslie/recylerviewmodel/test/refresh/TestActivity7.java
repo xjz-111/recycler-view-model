@@ -93,7 +93,7 @@ public class TestActivity7 extends BaseActivity implements SwipeRefreshLayout.On
             setRefreshEnable(true);
             initFooterViewModelData();
             onChangeFooterState(Footer.FOOTER_LOADING);
-        }, 3000);
+        }, 1000);
     }
 
     @Override

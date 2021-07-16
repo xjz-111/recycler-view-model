@@ -53,6 +53,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         parent.addView(recyclerView);
     }
 
+    protected void setViewModels(BaseCommonViewModel... vms){
+        adapter.setViewModels(vms);
+    }
+
     protected void addView2(@NonNull RelativeLayout parent){}
 
     protected CommonRecyclerViewAdapter getAdapter(){
@@ -60,7 +64,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     protected abstract void initViewModels(@NonNull List<BaseCommonViewModel> vms);
-
 
     protected abstract RecyclerView.LayoutManager getLayoutManager();
 }
