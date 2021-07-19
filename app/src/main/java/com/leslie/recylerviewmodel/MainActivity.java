@@ -7,6 +7,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.leslie.recylerviewmodel.test.alphabetlist.TestActivity6;
+import com.leslie.recylerviewmodel.test.carousel.TestActivity11;
 import com.leslie.recylerviewmodel.test.grid.TestActivity4;
 import com.leslie.recylerviewmodel.test.headerfoooter.TestActivity2;
 import com.leslie.recylerviewmodel.test.hover.TestActivity5;
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn8).setOnClickListener(this);
         findViewById(R.id.btn9).setOnClickListener(this);
         findViewById(R.id.btn10).setOnClickListener(this);
+        findViewById(R.id.btn11).setOnClickListener(this);
     }
 
     @Override
@@ -58,6 +60,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(new Intent(this, TestActivity9.class));
         } else if (id == R.id.btn10){
             startActivity(new Intent(this, TestActivity10.class));
+        } else if (id == R.id.btn11){
+            startActivity(new Intent(this, TestActivity11.class));
         }
     }
 }

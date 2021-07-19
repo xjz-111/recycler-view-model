@@ -103,6 +103,23 @@ public class Utils {
         return list;
     }
 
+    public static List<ImgData> getList11_1(){
+        List<ImgData> list = getList();
+        int length = imgs.length;
+        for (int i = 0; i < 2; i++){
+            list.add(new ImgData(imgs[i % length], 0, 0, "标题内容---" + i));
+        }
+        return list;
+    }
+
+    public static List<ImgData> getList11_2(){
+        List<ImgData> list = getList();
+        for (int i = 0; i < 2; i++){
+            list.add(new ImgData(null, 0, 0, "标题内容---" + (2 + i)));
+        }
+        return list;
+    }
+
 
     /**
      * 测量View

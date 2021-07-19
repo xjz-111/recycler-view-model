@@ -279,7 +279,7 @@ public abstract class BaseCommonViewModel<T, K extends ViewDataBinding> implemen
         }
 
         // 给所有的view添加id，方便在ItemDecoration中判断当前屏幕中的View是否为所要设置的ViewModel
-        ViewDataBinding binding = createBind(inflate,parent);
+        ViewDataBinding binding = createBind(inflate, parent);
         View root = binding.getRoot();
         if (-1 == root.getId()){
             root.setId(currentViewId == -1 ? currentViewId = root.hashCode() : currentViewId);
@@ -339,7 +339,7 @@ public abstract class BaseCommonViewModel<T, K extends ViewDataBinding> implemen
     protected void setVariable(@NonNull ViewDataBinding binding, T item, final int position){
         int variable = getVariable(item, position);
         if (variable > 0) {
-            binding.setVariable(getVariable(item, position), item);
+            binding.setVariable(variable, item);
             binding.executePendingBindings();
         }
     }
