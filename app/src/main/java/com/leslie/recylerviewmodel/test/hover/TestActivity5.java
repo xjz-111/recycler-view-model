@@ -12,6 +12,8 @@ import com.leslie.recylerviewmodel.test.headerfoooter.HeaderViewModel;
 import java.util.List;
 
 /**
+ * 带悬停的列表
+ *
  * 作者：xjzhao
  * 时间：2021-07-09 18:42
  */

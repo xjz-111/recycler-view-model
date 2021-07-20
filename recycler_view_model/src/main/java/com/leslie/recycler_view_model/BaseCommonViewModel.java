@@ -238,7 +238,17 @@ public abstract class BaseCommonViewModel<T, K extends ViewDataBinding> implemen
     }
 
     int getViewType(int position) {
-        return isNormalViewType(getItem(position)) ? normalViewType : spaceViewType;
+        return isNormalViewType(getItem(position)) && !isDirtyData(position, getItem(position)) ? normalViewType : spaceViewType;
+    }
+
+    /**
+     * 某一条是否为脏数据
+     * @param position
+     * @param t
+     * @return
+     */
+    protected boolean isDirtyData(int position, T t){
+        return false;
     }
 
     protected boolean isNormalViewType(T t){

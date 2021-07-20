@@ -12,7 +12,7 @@ import com.leslie.recylerviewmodel.test.grid.GridViewModel;
 import java.util.List;
 
 /**
- * 带轮播图
+ * 带轮播图列表
  *
  * 作者：xjzhao
  * 时间：2021-07-19 23:47

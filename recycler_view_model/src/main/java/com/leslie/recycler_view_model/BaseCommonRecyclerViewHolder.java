@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
  * 邮箱：mr.feeling.heart@gmail.com
  * 时间: 2017-03-07  13:01
  */
-public class BaseCommonRecyclerViewHolder<T extends ViewDataBinding, K> extends RecyclerView.ViewHolder {
+class BaseCommonRecyclerViewHolder<T extends ViewDataBinding, K> extends RecyclerView.ViewHolder {
     private View itemView;
     private T binding;
     private BaseCommonViewModel<K, T> viewModel;

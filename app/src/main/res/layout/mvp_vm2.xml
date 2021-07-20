@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="mvp2"
+            type="com.leslie.recylerviewmodel.test.data.Mvp" />
+        <import type="android.view.View"/>
+        <import type="androidx.core.content.ContextCompat"/>
+        <import type="com.leslie.recylerviewmodel.R"/>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_margin="20dp"
+            app:url="@{mvp2.url}"
+            app:placeholder="@{ContextCompat.getDrawable(context, R.mipmap.app_default)}"
+            android:scaleType="centerCrop"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+
+        <TextView
+            android:textColor="@color/colorAccent"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/img"
+            android:text="@{mvp2.title}"
+            android:layout_marginRight="20dp"
+            android:singleLine="true"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:id="@+id/parentText"
+            android:layout_width="wrap_content"
+            android:layout_height="200px"
+            android:gravity="center" />
+
+        <Button
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:visibility="@{mvp2.isClick ? View.VISIBLE : View.GONE}"
+            android:id="@+id/btn"
+            android:text="@{`Header - ` + mvp2.title}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+</layout>

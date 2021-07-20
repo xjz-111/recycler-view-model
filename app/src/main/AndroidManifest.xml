@@ -33,6 +33,7 @@
         <activity android:name=".test.vmRequest.TestActivity9" />
         <activity android:name=".test.video.TestActivity10" />
         <activity android:name=".test.carousel.TestActivity11" />
+        <activity android:name=".test.mvp.TestActivity12" />
     </application>
 
 </manifest>

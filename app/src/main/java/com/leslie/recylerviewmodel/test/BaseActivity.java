@@ -50,7 +50,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected void addRecyclerView(@NonNull RelativeLayout parent){
         recyclerView = new AutoLoadRecyclerView(this);
-        parent.addView(recyclerView);
+        parent.addView(recyclerView, new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
     }
 
     protected void setViewModels(BaseCommonViewModel... vms){

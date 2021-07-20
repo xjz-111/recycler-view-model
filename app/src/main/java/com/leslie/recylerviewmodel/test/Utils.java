@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import com.leslie.recylerviewmodel.MApplication;
 import com.leslie.recylerviewmodel.test.data.Alphabet;
 import com.leslie.recylerviewmodel.test.data.ImgData;
+import com.leslie.recylerviewmodel.test.data.Mvp;
 import com.leslie.recylerviewmodel.test.data.Video;
 
 import java.util.ArrayList;
@@ -47,6 +48,14 @@ public class Utils {
             "https://v-cdn.zjol.com.cn/276989.mp4",
             "https://v-cdn.zjol.com.cn/276990.mp4",
             "https://v-cdn.zjol.com.cn/276991.mp4",
+    };
+
+    public static String[] colors = new String[]{
+            "#0000FF",
+            "#00FFFF",
+            "#FFFF00",
+            "#FF8C00",
+            "#000000",
     };
 
     public static void init(){
@@ -116,6 +125,14 @@ public class Utils {
         List<ImgData> list = getList();
         for (int i = 0; i < 2; i++){
             list.add(new ImgData(null, 0, 0, "标题内容---" + (2 + i)));
+        }
+        return list;
+    }
+
+    public static List<Mvp> getList12(){
+        List<Mvp> list = getList();
+        for (int i = 0; i < 5; i++){
+            list.add(new Mvp(imgs[i % imgs.length], 0, 0, colors[i % colors.length]));
         }
         return list;
     }

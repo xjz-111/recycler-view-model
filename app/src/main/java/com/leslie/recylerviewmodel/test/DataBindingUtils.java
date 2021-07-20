@@ -1,9 +1,11 @@
 package com.leslie.recylerviewmodel.test;
 
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.databinding.BindingAdapter;
 
@@ -15,6 +17,18 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
  * 时间：2021-07-09 01:00
  */
 public class DataBindingUtils {
+
+    /**
+     *
+     * @param tv
+     * @param color
+     */
+    @BindingAdapter({"android:textColor"})
+    public static void setTextColor(TextView tv, String color){
+        if (null != tv && !TextUtils.isEmpty(color)) {
+            tv.setTextColor(Color.parseColor(color));
+        }
+    }
 
     /**
      * 列表上加载图片

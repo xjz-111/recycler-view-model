@@ -11,7 +11,7 @@ import com.leslie.recylerviewmodel.test.Utils;
 import java.util.List;
 
 /**
- * 带有header的
+ * 带有header和Footer
  *
  * 作者：xjzhao
  * 时间：2021-07-09 00:28

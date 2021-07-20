@@ -7,7 +7,7 @@ package com.leslie.recycler_view_model;
  * 时间: 2017-03-10  18:08
  */
 
-public interface IComm {
+interface IComm {
     int SPACE_VIEW_TYPE_SPEC = -1;
     int DEFAULT_SPAN_COUNT = 1;
 }

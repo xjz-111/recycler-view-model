@@ -19,6 +19,8 @@ import com.leslie.recylerviewmodel.test.data.Alphabet;
 import java.util.List;
 
 /**
+ * 分类悬停列表
+ *
  * 作者：xjzhao
  * 时间：2021-07-12 16:41
  */

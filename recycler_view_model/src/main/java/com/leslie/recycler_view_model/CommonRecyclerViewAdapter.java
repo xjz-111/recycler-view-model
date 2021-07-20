@@ -149,7 +149,7 @@ public class CommonRecyclerViewAdapter extends RecyclerView.Adapter<BaseCommonRe
     @Override
     public int getItemViewType(int position) {
         Vm vm = getVm(position);
-        return null != vm ? vm.getViewModel().getViewType(position - vm.getStartPosition()) : -1;
+        return null != vm ? vm.getViewModel().getViewType(position - vm.getStartPosition()) : SPACE_VIEW_TYPE_SPEC;
     }
 
     @Override

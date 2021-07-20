@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.leslie.recycler_view_model.BaseCommonViewModel;
 import com.leslie.recylerviewmodel.BR;
 import com.leslie.recylerviewmodel.R;
+import com.leslie.recylerviewmodel.databinding.AlphabetVmBinding;
 import com.leslie.recylerviewmodel.databinding.HoverViewBinding;
 import com.leslie.recylerviewmodel.test.data.Alphabet;
 
@@ -18,7 +19,7 @@ import java.util.List;
  * 作者：xjzhao
  * 时间：2021-07-12 16:42
  */
-public class AlphabetViewModel extends BaseCommonViewModel<Alphabet, HoverViewBinding> {
+public class AlphabetViewModel extends BaseCommonViewModel<Alphabet, AlphabetVmBinding> {
     private Alphabet hover;
     private OnScrollListener onScrollListener;
 
@@ -39,11 +40,12 @@ public class AlphabetViewModel extends BaseCommonViewModel<Alphabet, HoverViewBi
 
 
     @Override
-    protected void initView(@NonNull HoverViewBinding binding, @NonNull Alphabet alphabet, int position, List<Object> payloads) {
+    protected void initView(@NonNull AlphabetVmBinding binding, @NonNull Alphabet alphabet, int position, List<Object> payloads) {
         super.initView(binding, alphabet, position, payloads);
         boolean isDisplay = isDisplay(alphabet);
-        binding.parent.setVisibility(isDisplay ? View.VISIBLE : View.GONE);
-        if (isDisplay) binding.parentText.setText(alphabet.getParent());
+        HoverViewBinding hBinding = binding.parentV;
+        hBinding.parent.setVisibility(isDisplay ? View.VISIBLE : View.GONE);
+        if (isDisplay) hBinding.parentText.setText(alphabet.getParent());
     }
 
     private boolean isDisplay(Alphabet alphabet){

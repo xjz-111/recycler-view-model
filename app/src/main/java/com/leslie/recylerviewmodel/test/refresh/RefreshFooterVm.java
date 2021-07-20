@@ -4,7 +4,7 @@ import androidx.annotation.NonNull;
 
 import com.leslie.recycler_view_model.BaseCommonViewModel;
 import com.leslie.recylerviewmodel.R;
-import com.leslie.recylerviewmodel.databinding.FooterVmBinding;
+import com.leslie.recylerviewmodel.databinding.RefreshFooterVmBinding;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ import java.util.List;
  * 时间: 2021-07-13  10:57
  */
 
-public class RefreshFooterVm extends BaseCommonViewModel<Footer, FooterVmBinding> {
+public class RefreshFooterVm extends BaseCommonViewModel<Footer, RefreshFooterVmBinding> {
     private IRefresh iLoad;
     private Footer footer;
 
@@ -85,10 +85,11 @@ public class RefreshFooterVm extends BaseCommonViewModel<Footer, FooterVmBinding
     }
 
     @Override
-    protected void initView(@NonNull FooterVmBinding binding, @NonNull Footer footer, int position, List<Object> payloads) {
+    protected void initView(@NonNull RefreshFooterVmBinding binding, @NonNull Footer footer, int position, List<Object> payloads) {
         super.initView(binding, footer, position, payloads);
 //        if (null != payloads && payloads.size() > 0) {
 //            Log.i("xjzhao", "payloads: " + payloads.size() + "  -  " + payloads.get(0));
 //        }
     }
+
 }
