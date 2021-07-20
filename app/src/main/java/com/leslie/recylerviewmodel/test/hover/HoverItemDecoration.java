@@ -80,8 +80,10 @@ public class HoverItemDecoration extends RecyclerView.ItemDecoration {
     public void onDrawOver(@NonNull Canvas c, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
         super.onDrawOver(c, parent, state);
         // 顶部的悬浮条
-        c.drawRect(0, 0, Utils.screenWidth, Math.min(scrollTop, 200) <= 0 ? 200 : Math.min(scrollTop, 200), paint);
-        drawText(c, new RectF(0, 0, Utils.screenWidth, Math.min(scrollTop, 200) <= 0 ? 200 : Math.min(scrollTop, 200)));
+        if (scrollTop <= 0) {
+            c.drawRect(0, 0, Utils.screenWidth, Math.min(scrollTop, 200) <= 0 ? 200 : Math.min(scrollTop, 200), paint);
+            drawText(c, new RectF(0, 0, Utils.screenWidth, Math.min(scrollTop, 200) <= 0 ? 200 : Math.min(scrollTop, 200)));
+        }
     }
 
     @Override
