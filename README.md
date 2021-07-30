@@ -29,7 +29,7 @@ repositories {
 
 dependencies {
     // 替换成最新版本
-    implementation 'com.github.xjz-111:recycler_view_model:*.*.*'
+    implementation 'com.github.xjz-111:recycler-view-model:*.*.*'
     ...
 }
 ```
